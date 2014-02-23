@@ -1,0 +1,33 @@
+%F NQuenns.c
+%%
+%D 
+typedef struct queue{
+              struct queue_node *front;
+              struct queue_node *rear;
+            }queue;
+%%
+%D
+typedef struct queue_node{
+                    int config_val;
+                     struct queue_node *next;
+                  }queue_node;
+%%
+%D
+typedef struct thread_arg{
+                     int **a;
+                     int row;
+                  }thread_arg;
+%%
+%X -p main
+%X -e config_finder
+%X -e config_iter
+%X -e config_init
+%X -e copy_board
+%X -e enqueue
+%X -e blackout
+%X -e dequeue
+%P
+init {
+	run main();
+}
+%%
